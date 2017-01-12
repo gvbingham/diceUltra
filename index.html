@@ -3,8 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <title>D-What???</title>
+<script src="lib/dice_gen.js"></script>
+<script src="lib/random.js"></script>
+<script src="lib/tray.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<!--<meta name="viewport" content="width=device-width">-->
 <style>
 body {
     background-image: url("images/bg.png");
@@ -231,7 +233,7 @@ p {
 </div>
 <div id="appdiv1">
 	<fieldset id="queue_field">
-		<legend>Queue</legend>	
+		<legend>Queue</legend>
 		<div id="queue_div">
 		<div class="queue_div" id="queue_d2_div"><img alt="D2" class="queue_img" src="images/2_2.svg" onClick='queue_engine(2, "remove");'><div class="queue_count" id="queue_d2_count"></div></div>
 		<div class="queue_div" id="queue_d4_div"><img alt="D4" class="queue_img" src="images/4_4.svg" onClick='queue_engine(4, "remove");'><div class="queue_count" id="queue_d4_count"></div></div>
@@ -244,7 +246,7 @@ p {
 		</div>
 	</fieldset>
 	<fieldset id="result_field">
-		<legend>Result</legend>	
+		<legend>Result</legend>
 		<div id="result_div"></div>
 	</fieldset>
 </div>

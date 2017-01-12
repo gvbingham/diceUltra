@@ -1,0 +1,26 @@
+{
+  "name": "diceultra",
+  "version": "1.0.0",
+  "description": "todo dice things",
+  "main": "index.html",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gvbingham/diceUltra.git"
+  },
+  "author": "Gavin Bingham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gvbingham/diceUltra/issues"
+  },
+  "homepage": "https://github.com/gvbingham/diceUltra#readme",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  }
+}

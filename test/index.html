@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>Dice Ultra Tests</title>
+  <link href="https://cdn.rawgit.com/mochajs/mocha/master/mocha.css" rel="stylesheet" />
+</head>
+<body>
+  <div id="mocha"></div>
+
+  <script src="https://cdn.rawgit.com/mochajs/mocha/master/mocha.js"></script>
+  <script src="https://cdn.rawgit.com/chaijs/chai/master/chai.js"></script>
+  <script src="../settings.js"></script>
+  <script src="../lib/random.js"></script>
+  <script src="../lib/die.js"></script>
+  <script src="../lib/wod.js"></script>
+  <script src="../lib/tray.js"></script>
+  <script src="../lib/table.js"></script>
+
+  <script>mocha.setup('bdd')</script>
+  <script src="./settings.js"></script>
+  <script src="lib/random.js"></script>
+  <script src="lib/die.js"></script>
+  <script src="lib/wod.js"></script>
+  <script src="lib/tray.js"></script>
+  <script src="lib/table.js"></script>
+  <script>
+	var expect = chai.expect;
+    mocha.checkLeaks();
+    mocha.run();
+  </script>
+</body>
+</html>

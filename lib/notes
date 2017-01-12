@@ -1,0 +1,17 @@
+notes
+
+lib should contain 
+* the randomizer
+* the tray
+    * the tray should add a die (one argument)
+    * the tray should add multiple dice (array of dice)
+    * the tray should delete or remove items
+* the constructor
+    * value // the rolled value of the die
+    * type // the type or D10 etc.
+    * zero // If it is true then it should roll between zero and a number instead of the default of 1 and a number
+    * tap // if true it should allow the die to be tapped.
+
+* the settings json
+    * should set if something is tappable.
+

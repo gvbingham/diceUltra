@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html> <!--manifest="lib/D_What.appcache">-->
+<head>
+<meta charset="UTF-8">
+<title>D-What???</title>
+<style>
+body {
+    background-image: url("images/bg.png");
+    margin:0px;
+    color:lightgrey;
+    font-size:18px;
+    font-family:Copperplate;
+}
+#appdiv1 {
+    position:absolute;
+    z-index:2;
+    left:50px;
+    top:50px;
+    right:50px;
+    bottom:50px;
+    background-color:rgba(255,255,255,0.1);
+    padding-left:10px;
+    padding-right:10px;
+    overflow:auto;
+}
+#contain {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+</style>
+</head>
+<body>
+    <dicebag></dicebag>
+    <div id="appdiv1">
+        <div id="contain">
+        <dicetray></dicetray>
+        <tabletop></tabletop>
+        </div>
+    </div>
+    <total></total>
+    <roll></roll>
+    <settings></settings>
+    <clear></clear>
+    <taprack></taprack>
+
+<script src="riot-tags/dicebag.tag" type="riot/tag"></script>
+<script src="riot-tags/dicetray.tag" type="riot/tag"></script>
+<script src="riot-tags/total.tag" type="riot/tag"></script>
+<script src="riot-tags/roll.tag" type="riot/tag"></script>
+<script src="riot-tags/settings.tag" type="riot/tag"></script>
+<script src="riot-tags/tabletop.tag" type="riot/tag"></script>
+<script src="riot-tags/clear.tag" type="riot/tag"></script>
+<script src="riot-tags/taprack.tag" type="riot/tag"></script>
+<script src="https://cdn.rawgit.com/riot/riot/master/riot%2Bcompiler.min.js"></script>
+<script>
+    riot.mount('*');
+</script>
+</body>
+</html>
