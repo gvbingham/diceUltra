@@ -1,5 +1,5 @@
 <total>
-    <span>Total</span>
+    <span>{total()}</span>
     <style>
     total {
         position:absolute;
@@ -17,4 +17,19 @@
         cursor:pointer;
     }
     </style>
+    <script>
+        riot.mixin(Results);
+        this.total = function () {
+            var temp_total = 0;
+            for(let item of Results) {
+                temp_total += item.value;
+            }
+            if(temp_total > 0) {
+                return temp_total;
+            }
+            else {
+                return 'Total'
+            }
+        };
+    </script>
 </total>

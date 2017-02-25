@@ -1,4 +1,4 @@
-<settings>
+<settings onclick={toggle_show}>
     <style>
         settings {
             bottom:0px;
@@ -18,4 +18,12 @@
             z-index:10;
         }
     </style>
+    <script>
+        riot.mixin(Refresh);
+        riot.mixin(Settings);
+        toggle_show() {
+            Settings.state = 'settings';
+            Refresh.now();
+        }
+    </script>
 </settings>

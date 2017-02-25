@@ -2,39 +2,45 @@
     <fieldset id="queue_field">
         <legend>Queue</legend>
         <div id="queue_div">
-            <div class="queue_div" id="queue_d2_div"><img alt="D2" class="queue_img" src="images/2_2.svg" onClick='queue_engine(2, "remove");'><div class="queue_count" id="queue_d2_count"></div></div>
-            <div class="queue_div" id="queue_d4_div"><img alt="D4" class="queue_img" src="images/4_4.svg" onClick='queue_engine(4, "remove");'><div class="queue_count" id="queue_d4_count"></div></div>
-            <div class="queue_div" id="queue_d6_div"><img alt="D6" class="queue_img" src="images/6_6.svg" onClick='queue_engine(6, "remove");'><div class="queue_count" id="queue_d6_count"></div></div>
-            <div class="queue_div" id="queue_d8_div"><img alt="D8" class="queue_img" src="images/8_8.svg" onClick='queue_engine(8, "remove");'><div class="queue_count" id="queue_d8_count"></div></div>
-            <div class="queue_div" id="queue_d10_div"><img alt="D10" class="queue_img" src="images/10_10.svg" onClick='queue_engine(10, "remove");'><div class="queue_count" id="queue_d10_count"></div></div>
-            <div class="queue_div" id="queue_d12_div"><img alt="D12" class="queue_img" src="images/12_12.svg" onClick='queue_engine(12, "remove");'><div class="queue_count" id="queue_d12_count"></div></div>
-            <div class="queue_div" id="queue_d20_div"><img alt="D20" class="queue_img" src="images/20_20.svg" onClick='queue_engine(20, "remove");'><div class="queue_count" id="queue_d20_count"></div></div>
-            <div class="queue_div" id="queue_d100_div"><img alt="D100" class="queue_img" src="images/100_100.svg" onClick='queue_engine(100, "remove");'><div class="queue_count" id="queue_d100_count"></div></div>
-
+            <div each={Tray_dice} class="queue_div" id="queue_d{type}_div"><img show={count} alt="D{type}" class="queue_img" src="images/{type}_{type}.svg" onclick={unqueue}>
+                <div show={count} class="queue_count" id="queue_d{type}_count">{count}</div>
+            </div>
         </div>
     </fieldset>
     <style>
         dicetray {
             background-color: rgba(100,100,100,0.5);
             display: block;
-            margin: 30px 20px 0px 20px;
+            margin: 30px 20px 0;
         }
         fieldset {
-            margin: 5px 10px 0px 10px;
+            margin: 5px 10px 0;
         }
         .queue_img {
-            height:35px;
-            width:35px;
-            margin:0px;
+            height: 35px;
+            width: 35px;
+            margin: 0;
         }
         .queue_div {
-            float:left;
-            position:relative;
-            margin:5px;
+            float: left;
+            position: relative;
         }
         .queue_count {
-            display:inline;
-            color:orange;
+            display: inline;
+            color: orange;
+            padding: 5px;
         }
+
     </style>
+    <script>
+        riot.mixin(Tray_dice);
+        unqueue(e) {
+            for (let item of Tray_dice) {
+                if (item.type == e.item.type) {
+                    item.count--;
+                }
+            }
+            Refresh.now();
+        }
+    </script>
 </dicetray>
