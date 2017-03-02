@@ -79,21 +79,10 @@
     var Results = [];
     var Settings = {
         random: 'standard',
-        highlight_high: 1,
-        highlight_high_color: "#00FF00",
-        highlight_low: 1,
-        highlight_low_color: "#FF0000",
-        highlight_reroll: 1,
-        highlight_reroll_color: "#0000FF",
-        re_roll_list: [],//Visit
-        re_roll_these: {},//Visit
-        re_roll_high: 1,
-        dice_tapping: 0,
-        state: "app",
-        game: "none",
+        reroll_high: true,
+        reroll_all: true,
+        dice_tapping: false,
         slider_value: 8,
-        big_top: "total"
-
     };
     riot.mixin(Refresh);
     riot.mixin(Tray_dice);

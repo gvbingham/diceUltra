@@ -3,11 +3,6 @@
     <div id="container">
         <div id="info_container">
             <highlight class="cards"/>
-
-            <div class="cards">Test</div>
-            <div class="cards">Test1</div>
-            <div class="cards">Test2</div>
-            <div class="cards">Test3</div>
         </div>
     </div>
     <style>
@@ -62,13 +57,13 @@
                 <td>
                     <label>High</label>
                 </td>
-                <td><input type="color" title="High"></td>
+                <td><input id="high" type="color" title="High" value={localStorage.highlight_high} onchange={sethighlight}></td>
             </tr>
             <tr>
                 <td>
                     <label>Low</label>
                 </td>
-                <td><input type="color" title="Low"></td>
+                <td><input id="low" type="color" title="Low" value={localStorage.highlight_low} onchange={sethighlight}></td>
             </tr>
         </table>
     </table>
@@ -78,5 +73,10 @@
             cursor: pointer;
         }
     </style>
-    <script></script>
+    <script>
+        sethighlight() {
+            localStorage.highlight_high = document.getElementById('high').value;
+            localStorage.highlight_low = document.getElementById('low').value;
+        }
+    </script>
 </highlight>
